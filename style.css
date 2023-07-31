@@ -1,0 +1,117 @@
+* {
+    font-family: 'Sora', sans-serif;;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    height: 2000px;
+    position: relative;
+}
+
+.navbar {
+    z-index: 2;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 10%;
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+#nav-item {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+#swipeBtn {
+    position: absolute;
+    left: 47%;
+    top: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+#swipeBtn > img {
+    width: 30px;
+    height: auto;
+    margin-top: -15px;
+}
+
+
+.textandimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 20%;
+    margin: auto;
+    width: 100%;
+
+}
+.textandimg > img{
+    width: 20%;
+}
+#headImgText{
+    font-size: 50px;
+    color: aliceblue;
+}
+
+
+#card-div {
+    border: transparent;
+    background-color: grey;
+}
+
+.cont-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.pushandget{
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* navbar-dropdown */
+.scrollable-menu {
+    max-height: 300px;
+    overflow-y: auto;
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favic/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favic/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favic/favicon-16x16.png">
+    <link rel="manifest" href="img/favic/site.webmanifest">
+    <link rel="mask-icon" href="img/favic/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkullShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./adaptivestyle.css">
+</head>
+
+<body class="bg-dark">
+    <!-- navbar -->
+    <div class="header position-relative">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark position-fixed w-100 text-danger">
+            <div class="container-fluid">
+                <a class="navbar-brand text-danger m-lg-5 fst-italic" href="#">SkullShop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto" id="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Category
+                            </a>
+                            <ul class="dropdown-menu scrollable-menu" role="menu"></ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" id="registerUser-modal"
+                                data-bs-toggle="modal" data-bs-target="#register-modal">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" id="loginUser-modal"
+                                data-bs-toggle="modal" data-bs-target="#login-modal">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" id="registerAdmin-modal"
+                                data-bs-toggle="modal" data-bs-target="#register-admin-modal">Add Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" id="logoutUser-btn">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" id="showUsername">No user</a>
+                        </li>
+                    </ul>
+                    <div class="nav-item">
+                        <img src="./img/cart.png" class="nav-link active" aria-current="page" href="#"
+                            id="cartModal-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    </div>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 bg-transparent text-bg-dark w-50" type="search"
+                            aria-label="Search" id="search-inp">
+                        <button class="btn btn-outline-danger" type="button" id="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <img src="./img/1.png" alt="eror" class="bg-black opacity-50 hero-image">
+        <div class="textandimg">
+            <img src="./img/red.png" alt="">
+            <div id="headImgText">Welcome to SkullShop</div>
+        </div>
+        <div class="btn bg-none text-light d-flex" id="swipeBtn">
+            <p>GO SHOP</p>
+            <img src="./img/chevrons-down.svg" alt="eror">
+        </div>
+    </div>
+
+    <!-- admin panel -->
+    <div class="w-100 justify-content-center text-center text-light">
+        <div class="mt-5 d-flex flex-column w-100" id="admin-panel">
+            <h2 class="panel-title">Admin panel</h2>
+
+            <input type="text" placeholder="Title" class="mb-2 w-50 m-auto" id="game-title">
+
+            <input type="number" placeholder="Price" class="mb-2 w-50 m-auto" id="game-price">
+
+            <input type="text" placeholder="Description" class="mb-2 w-50 m-auto" id="game-desc">
+
+            <input type="url" placeholder="Image url" class="mb-2 w-50 m-auto" id="game-image">
+
+            <input type="text" placeholder="Category" class="mb-2 w-50 m-auto" id="game-category">
+
+            <input type="text" placeholder="Reliz" class="mb-2 w-50 m-auto" id="game-reliz">
+
+            <input type="text" placeholder="Platforms" class="mb-2 w-50 m-auto" id="game-platforms">
+
+            <button class="btn btn-dark w-50 m-auto add-game-btn">Add Game</button>
+            <button class="btn btn-dark w-50 m-auto save-changes-btn">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- ! register modal -->
+    <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-light" id="registerModalLabel">
+                        REGISTER
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input class="mb-2 w-100 form-control" type="text" placeholder="Name" id="reg-name" />
+
+                    <input class="mb-2 w-100 form-control" type="number" placeholder="Age" id="reg-age" />
+
+                    <input class="mb-2 w-100 form-control" type="email" placeholder="Email" id="reg-email" />
+
+                    <input class="mb-2 w-100 form-control" type="password" placeholder="Password" id="reg-password" />
+
+                    <input class="mb-2 w-100 form-control" type="password" placeholder="Confirm Password"
+                        id="reg-password-confirm" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="register-modal-btn">
+                        Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ! register admin modal -->
+    <div class="modal fade" id="register-admin-modal" tabindex="-1" aria-labelledby="registerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-light" id="registerAdminModalLabel">
+                        REGISTER NEW ADMIN
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input class="mb-2 w-100 form-control" type="text" placeholder="Name" id="reg-admin-name" />
+
+                    <input class="mb-2 w-100 form-control" type="number" placeholder="Age" id="reg-admin-age" />
+
+                    <input class="mb-2 w-100 form-control" type="email" placeholder="Email" id="reg-admin-email" />
+
+                    <input class="mb-2 w-100 form-control" type="password" placeholder="Password"
+                        id="reg-admin-password" />
+
+                    <input class="mb-2 w-100 form-control" type="password" placeholder="Confirm Password"
+                        id="reg-admin-password-confirm" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        id="register-admin-modal-btn">
+                        Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ! login modal -->
+
+    <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-light" id="loginModalLabel">
+                        LOGIN
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input class="mb-2 w-100 form-control" type="text" placeholder="Name" id="login-name" />
+
+                    <input class="mb-2 w-100 form-control" type="text" placeholder="Password" id="login-password" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="login-modal-btn">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ! content -->
+    <div class="cont-content">
+        <button id="push-btn" class="pushandget">PUSH TO DB</button>
+        <button id="get-btn" class="pushandget">GET GAMES FROM DB</button>
+        <div id="content__div" class="d-flex flex-wrap justify-content-center"></div>
+    </div>
+
+    <!-- ! pagination -->
+    <div class="d-flex w-100 justify-content-center">
+        <a class="btn btn-dark m-1" href="#" aria-label="Previous" id="prev-page-btn">
+            <span aria-hidden="true">&laquo;</span>
+        </a>
+        <a class="btn btn-dark m-1" href="#" aria-label="Next" id="next-page-btn">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+    </div>
+
+    <!--! cart  -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Cart</h1>
+                    <button type="button" class="btn-close btn-close-cart" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="border border-dark w-100 text-center">
+                    </table>
+                    <h4 class="my-3" id="cart-total-cost"></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="create-cart-order-btn">ORDER</button>
+                    <button type="button" class="btn btn-danger" id="clean-cart-btn">CLEAN ALL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
